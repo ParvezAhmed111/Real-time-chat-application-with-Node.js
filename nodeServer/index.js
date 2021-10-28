@@ -1,0 +1,20 @@
+// Node server which will handle socket io connections
+// const io= require('socket.io')(8000);    //8000 is port, you can take any port
+
+const { Server } = require("socket.io");
+
+const io = new Server(5500);
+
+const users={};
+
+io.on('connection', socket =>{
+    socket.on('new-user-joined', name=>{
+        console.log("new user: ", name);
+        users[socket.id] = name;
+        socket.broadcast.emit('user-joined', name);
+    });
+
+    socket.on('send', message=>{
+        socket.broadcast.emit('recieve', {message: message, name: users[socket.id]});
+    });
+});

@@ -1,0 +1,10 @@
+Socket.IO
+
+Socket.IO is a JavaScript library for realtime web applications. 
+It enables realtime, bi-directional communication between web clients and servers. 
+It has two parts: a client-side library that runs in the browser, and a server-side library for Node.js. 
+Both components have a nearly identical API
+
+Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server. It consists of:
+    a Node.js server: Source | API
+    a Javascript client library for the browser (which can be also run from Node.js): Source | API
